@@ -1,8 +1,15 @@
 import { useState,useEffect} from 'react';
 import useInterval from '../../../customHooks/useInterval';
 import { useData } from '../../../myContext';
+import timer2 from '../../../sounds/timer2.wav'
 
 function Timer ({timeLimit, radius,strokeWidth,strokeColor}) {
+
+    useEffect(()=>{
+        const TIMER = new Audio(timer2)
+        TIMER.play()
+        return () => TIMER.pause()   
+    },[])
 
     const timerProperties = {
         circumference : radius * 2 * Math.PI,

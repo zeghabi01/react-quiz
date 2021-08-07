@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { reset, useData } from '../myContext'
+import win from '../sounds/win.wav'
 
 function Win() {
 
+
+    useEffect(()=>{
+        const WIN = new Audio(win)
+        WIN.play()
+        return () => WIN.pause()
+    },[])
+    
     const {result,dispatch,sections} = useData()
 
     const goBackFromWin = () => {

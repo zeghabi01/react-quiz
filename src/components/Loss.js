@@ -1,8 +1,17 @@
 import React ,{ useEffect }  from 'react'
 import { reset, useData } from '../myContext'
+import loss from '../sounds/loss.wav'
+
 function Loss() {
 
-    const {dispatch,sections,result} = useData()
+    
+    useEffect(()=>{
+        const LOSS = new Audio(loss)
+        LOSS.play()
+        return () => LOSS.pause()
+    },[])
+
+    const {dispatch,sections,result,setIndex} = useData()
 
     const goBackFromLoss = () => {
         dispatch({type : 'RESULT',payload:{
@@ -13,6 +22,7 @@ function Loss() {
             ...sections,
             startSection : true
         }})
+        setIndex(0)
         reset(dispatch)
     }
 
