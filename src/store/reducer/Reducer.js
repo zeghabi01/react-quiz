@@ -7,7 +7,7 @@ const initialState = {
         correct : false,
         wrong : false,
         fail : false,
-        timer : true,
+        timer : false,
         loader : false
     },
     result : {

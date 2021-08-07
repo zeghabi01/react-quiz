@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -484,6 +485,7 @@ body.disabled {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #FFFFFF;
+  font-family: 'Cairo', sans-serif;
 }
 
 .loss button {
@@ -512,7 +514,7 @@ body.disabled {
   border: 2px solid white;
 }
 
-.loss > * {
+.loss > * :not(i) {
   font-family: 'Cairo', sans-serif;
 }
 
@@ -543,6 +545,7 @@ body.disabled {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #FFFFFF;
+  font-family: 'Cairo', sans-serif;
 }
 
 .win button {
@@ -571,7 +574,7 @@ body.disabled {
   border: 2px solid white;
 }
 
-.win > * {
+.win > * :not(i) {
   font-family: 'Cairo', sans-serif;
 }
 

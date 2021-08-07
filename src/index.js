@@ -9,8 +9,8 @@ import GameStartSection from './components/game-start-section'
 import GameSection from './components/game-section'
 import {MyContext, useData} from './myContext'
 import loader from './loading-buffering.gif'
-import Win from './components/Win'
 import Loss from './components/Loss'
+import Win from './components/Win'
 
 const loaderStyles = {
   position : 'absolute',

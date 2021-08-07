@@ -6,14 +6,19 @@ function GameStartSection() {
 
     const inputRef = useRef('')
 
-    const {dispatch} = useData()
+    const {dispatch,status} = useData()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        localStorage.setItem('playerName', inputRef.current.value);
+        if(inputRef.current.value) {
+            localStorage.setItem('playerName', inputRef.current.value);
+        }else {
+            localStorage.setItem('playerName', 'لاعب غير معروف');
+        }
+        displayGameSection(dispatch,status)
         inputRef.current.value = ''
-        displayGameSection(dispatch)
     }
+
 
     return (
         <>
@@ -38,10 +43,14 @@ function GameStartSection() {
     )
 }
 
-const displayGameSection = (dispatch) => {
+const displayGameSection = (dispatch,status) => {
     dispatch({type : 'SECTIONS' , payload : {
         startSection : false,
         gameSection : true
+    }})
+    dispatch({type : 'STATUS' , payload : {
+        ...status,
+        timer : true
     }})
 }
 

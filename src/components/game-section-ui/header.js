@@ -23,7 +23,8 @@ function Header({questionIndex}) {
                 timer : false,
                 loader : true
             }})
-            
+
+        
             dispatch({type : 'UNCLICKABLE',payload : true })
 
             setTimeout(()=>{
@@ -55,7 +56,7 @@ function Header({questionIndex}) {
             
             <div id="assets" className="timer">
                 {status.timer ? <Timer 
-                        timeLimit={5}
+                        timeLimit={12}
                         radius={19}
                         strokeWidth = {4}
                         strokeColor = '#32A7F9'
