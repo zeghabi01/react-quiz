@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react'
 import { reset, useData } from '../myContext'
 import win from '../sounds/win.wav'
+import useAudio from '../customHooks/useAudio'
 
 function Win() {
 
 
-    useEffect(()=>{
-        const WIN = new Audio(win)
-        WIN.play()
-        return () => WIN.pause()
-    },[])
+    useAudio(win)
     
     const {result,dispatch,sections} = useData()
 

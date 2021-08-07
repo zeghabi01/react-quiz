@@ -1,15 +1,11 @@
 import React ,{ useEffect }  from 'react'
 import { reset, useData } from '../myContext'
 import loss from '../sounds/loss.wav'
+import useAudio from '../customHooks/useAudio'
 
 function Loss() {
 
-    
-    useEffect(()=>{
-        const LOSS = new Audio(loss)
-        LOSS.play()
-        return () => LOSS.pause()
-    },[])
+    useAudio(loss)
 
     const {dispatch,sections,result,setIndex} = useData()
 

@@ -1,9 +1,8 @@
-import React from 'react'
 import wrong from '../../../sounds/wrong.wav'
+import useAudio from '../../../customHooks/useAudio'
 function Wrong() {
 
-    const WRONG = new Audio(wrong)
-    WRONG.play()
+    useAudio(wrong)
 
     return (
         <i id="wrong" style={{fontSize: '42px',color: 'red'}} className="far fa-times-circle"></i>
